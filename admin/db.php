@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "u586615155_vermi_compost";
-$pass = "Z:czihtI2";
+$user = "root";
+$pass = "";
 $dbname = "u586615155_vermi_compost";
 // $host = "localhost";
 // $user = "root";
