@@ -1,17 +1,6 @@
 RewriteEngine On
 
-# Remove .php extension from URL (internal rewrite)
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php [L]
-
-# Do not redirect .php URLs for POST requests (keep AJAX working)
-RewriteCond %{REQUEST_METHOD} POST
-RewriteRule ^(.+)\.php$ - [L]
-
-# Redirect requests with .php to clean URL (SEO-friendly, GET only)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(.+)\.php\sHTTP/
-RewriteCond %{REQUEST_METHOD} GET
-RewriteRule ^(.+)\.php$ /$1 [R=301,L]
-
-# Custom 404 Page
-ErrorDocument 404 /404.php
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
