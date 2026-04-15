@@ -370,6 +370,13 @@ $current_country_id = $_SESSION['selected_country_id'] ?? null;
                                     </label>
                                 </div>
                                 <?php endif; ?>
+                                <div class="form-check" id="payu_payment_section">
+                                    <input class="form-check-input payment-radio" type="radio" name="payment_method"
+                                        id="payu" value="PayU">
+                                    <label class="form-check-label" for="payu">
+                                        PayU Payment (Credit/Debit/UPI)
+                                    </label>
+                                </div>
                                 <div class="form-check" id="paypal_option" style="display:none;">
                                     <div id="paypal-button-container"></div>
                                 </div>

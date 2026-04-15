@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once 'admin/db.php';
 require_once 'admin/notification_helper.php';
 require_once 'includes/razorpay_config.php';
+require_once 'includes/payu_config.php';
 require_once 'includes/price_helper.php'; // For get_currency_multiplier
 
 header('Content-Type: application/json');

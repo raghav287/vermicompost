@@ -174,10 +174,10 @@ $related_products = $stmt_rel->get_result();
                         <div class="page_banner_text wow fadeInUp">
                             <h1><?php echo htmlspecialchars($product['name']); ?></h1>
                             <ul>
-                                <li><a href="index"><i class="fal fa-home-lg"></i> Home</a></li>
+                                <li><a href="index"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="shop">Shop</a></li>
                                 <?php if (!empty($product['category_name'])): ?>
-                                    <li><a href="#"><?php echo htmlspecialchars($product['category_name']); ?></a></li>
+                                <li><a href="#"><?php echo htmlspecialchars($product['category_name']); ?></a></li>
                                 <?php endif; ?>
                                 <li><a href="#"><?php echo htmlspecialchars($product['name']); ?></a></li>
                             </ul>
@@ -206,24 +206,24 @@ $related_products = $stmt_rel->get_result();
                                     <div class="col-xl-2 col-lg-3 col-md-3 order-2 order-md-1">
                                         <div class="row details_slider_nav">
                                             <?php foreach ($images as $img): ?>
-                                                <div class="col-12">
-                                                    <div class="details_slider_nav_item">
-                                                        <img src="assets/uploads/products/<?php echo htmlspecialchars($img['image_path']); ?>"
-                                                            alt="Product" class="img-fluid w-100">
-                                                    </div>
+                                            <div class="col-12">
+                                                <div class="details_slider_nav_item">
+                                                    <img src="assets/uploads/products/<?php echo htmlspecialchars($img['image_path']); ?>"
+                                                        alt="Product" class="img-fluid w-100">
                                                 </div>
+                                            </div>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
                                     <div class="col-xl-10 col-lg-9 col-md-9  order-md-1">
                                         <div class="row details_slider_thumb">
                                             <?php foreach ($images as $img): ?>
-                                                <div class="col-12">
-                                                    <div class="details_slider_thumb_item">
-                                                        <img src="assets/uploads/products/<?php echo htmlspecialchars($img['image_path']); ?>"
-                                                            alt="Product" class="img-fluid w-100">
-                                                    </div>
+                                            <div class="col-12">
+                                                <div class="details_slider_thumb_item">
+                                                    <img src="assets/uploads/products/<?php echo htmlspecialchars($img['image_path']); ?>"
+                                                        alt="Product" class="img-fluid w-100">
                                                 </div>
+                                            </div>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
@@ -236,9 +236,9 @@ $related_products = $stmt_rel->get_result();
                                 <h2 class="details_title"><?php echo htmlspecialchars($product['name']); ?></h2>
                                 <div class="d-flex flex-wrap align-items-center">
                                     <?php if ($total_stock > 0): ?>
-                                        <p class="stock">In Stock</p>
+                                    <p class="stock">In Stock</p>
                                     <?php else: ?>
-                                        <p class="stock out_stock">Out of Stock</p>
+                                    <p class="stock out_stock">Out of Stock</p>
                                     <?php endif; ?>
                                 </div>
                                 <h3 class="price" id="product-price">
@@ -266,50 +266,50 @@ $related_products = $stmt_rel->get_result();
                                     ?>
                                 </p>
                                 <?php if (!empty($unique_sizes)): ?>
-                                    <div class="details_single_variant">
-                                        <p class="variant_title">Size :</p>
-                                        <ul class="details_variant_size">
-                                            <?php
+                                <div class="details_single_variant">
+                                    <p class="variant_title">Size :</p>
+                                    <ul class="details_variant_size">
+                                        <?php
                                             $first = true;
                                             foreach ($unique_sizes as $size):
                                                 $active_class = $first ? 'active' : '';
                                                 $first = false;
                                                 ?>
-                                                <li class="<?php echo $active_class; ?>"
-                                                    data-size="<?php echo htmlspecialchars($size); ?>">
-                                                    <?php echo htmlspecialchars($size); ?>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
+                                        <li class="<?php echo $active_class; ?>"
+                                            data-size="<?php echo htmlspecialchars($size); ?>">
+                                            <?php echo htmlspecialchars($size); ?>
+                                        </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
                                 <?php endif; ?>
 
                                 <?php if (!empty($unique_colors)): ?>
-                                    <div class="details_single_variant">
-                                        <p class="variant_title">Color :</p>
-                                        <ul class="details_variant_color d-flex flex-wrap"
-                                            style="gap: 10px; list-style: none; padding: 0;">
-                                            <?php
+                                <div class="details_single_variant">
+                                    <p class="variant_title">Color :</p>
+                                    <ul class="details_variant_color d-flex flex-wrap"
+                                        style="gap: 10px; list-style: none; padding: 0;">
+                                        <?php
                                             foreach ($unique_colors as $color):
                                                 ?>
-                                                <li class="color_item" data-color="<?php echo htmlspecialchars($color); ?>"
-                                                    style="width: 30px; height: 30px; border-radius: 50%; background-color: <?php echo htmlspecialchars($color); ?>; border: 1px solid #ddd; cursor: pointer;"
-                                                    title="<?php echo htmlspecialchars($color); ?>"></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
+                                        <li class="color_item" data-color="<?php echo htmlspecialchars($color); ?>"
+                                            style="width: 30px; height: 30px; border-radius: 50%; background-color: <?php echo htmlspecialchars($color); ?>; border: 1px solid #ddd; cursor: pointer;"
+                                            title="<?php echo htmlspecialchars($color); ?>"></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
                                 <?php endif; ?>
 
                                 <div class="d-flex flex-wrap align-items-center">
                                     <div class="details_qty_input">
-                                        <button class="minus"><i class="fal fa-minus"></i></button>
+                                        <button class="minus"><i class="fas fa-minus"></i></button>
                                         <input type="text" placeholder="01" value="1">
-                                        <button class="plus"><i class="fal fa-plus"></i></button>
+                                        <button class="plus"><i class="fas fa-plus"></i></button>
                                     </div>
                                     <div class="details_btn_area">
                                         <a class="common_btn buy_now" href="#">Buy Now <i
                                                 class="fas fa-long-arrow-right"></i></a>
-                                        <a class="common_btn" href="#">Add to cart <i
+                                        <a class="common_btn" id="add-to-cart-btn" href="#">Add to cart <i
                                                 class="fas fa-long-arrow-right"></i></a>
                                     </div>
                                 </div> <br>
@@ -326,11 +326,15 @@ $related_products = $stmt_rel->get_result();
                                     $share_url = urlencode($actual_link);
                                     $share_title = urlencode($product['name']);
                                     ?>
-                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/intent/tweet?text=<?php echo $share_title; ?>&url=<?php echo $share_url; ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>"
+                                            target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/intent/tweet?text=<?php echo $share_title; ?>&url=<?php echo $share_url; ?>"
+                                            target="_blank"><i class="fab fa-twitter"></i></a></li>
                                     <!-- Instagram does not support web link sharing, switched to LinkedIn -->
-                                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $share_url; ?>&title=<?php echo $share_title; ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="https://api.whatsapp.com/send?text=<?php echo $share_title . ' ' . $share_url; ?>" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $share_url; ?>&title=<?php echo $share_title; ?>"
+                                            target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=<?php echo $share_title . ' ' . $share_url; ?>"
+                                            target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                 </ul>
 
                             </div>
@@ -369,19 +373,19 @@ $related_products = $stmt_rel->get_result();
                                                         <table class="table table-striped">
                                                             <tbody>
                                                                 <?php if (!empty($specs)): ?>
-                                                                    <?php foreach ($specs as $spec): ?>
-                                                                        <tr>
-                                                                            <th><?php echo htmlspecialchars($spec['spec_key']); ?>
-                                                                            </th>
-                                                                            <td><?php echo htmlspecialchars($spec['spec_value']); ?>
-                                                                            </td>
-                                                                        </tr>
-                                                                    <?php endforeach; ?>
+                                                                <?php foreach ($specs as $spec): ?>
+                                                                <tr>
+                                                                    <th><?php echo htmlspecialchars($spec['spec_key']); ?>
+                                                                    </th>
+                                                                    <td><?php echo htmlspecialchars($spec['spec_value']); ?>
+                                                                    </td>
+                                                                </tr>
+                                                                <?php endforeach; ?>
                                                                 <?php else: ?>
-                                                                    <tr>
-                                                                        <td colspan="2">No additional information available.
-                                                                        </td>
-                                                                    </tr>
+                                                                <tr>
+                                                                    <td colspan="2">No additional information available.
+                                                                    </td>
+                                                                </tr>
                                                                 <?php endif; ?>
                                                             </tbody>
                                                         </table>
@@ -423,42 +427,42 @@ $related_products = $stmt_rel->get_result();
                     $rel_strike_price = $rel['min_strike_price'];
                     $rel_img = !empty($rel['image']) ? 'assets/uploads/products/' . $rel['image'] : 'assets/images/no_image.png';
                     ?>
-                    <div class="col-xl-1-5">
-                        <div class="product_item_2 product_item">
-                            <div class="product_img">
-                                <img src="<?php echo htmlspecialchars($rel_img); ?>" alt="Product" class="img-fluid w-100">
-                                <ul class="btn_list">
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/love_icon_white.svg" alt="Love" class="img-fluid">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/cart_icon_white.svg" alt="Love" class="img-fluid">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product_text">
-                                <a class="title"
-                                    href="shop-details?id=<?php echo $rel['id']; ?>"><?php echo htmlspecialchars($rel['name']); ?></a>
-                                <p class="price"><?php echo format_price($rel_price); ?>
-                                    <?php if ($rel_strike_price > $rel_price): ?>
-                                        <del><?php echo format_price($rel_strike_price); ?></del>
-                                    <?php endif; ?>
-                                </p>
-                                <p class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <span>(0 reviews)</span>
-                                </p>
-                            </div>
+                <div class="col-xl-1-5">
+                    <div class="product_item_2 product_item">
+                        <div class="product_img">
+                            <img src="<?php echo htmlspecialchars($rel_img); ?>" alt="Product" class="img-fluid w-100">
+                            <ul class="btn_list">
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/love_icon_white.svg" alt="Love" class="img-fluid">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/cart_icon_white.svg" alt="Love" class="img-fluid">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product_text">
+                            <a class="title"
+                                href="shop-details?id=<?php echo $rel['id']; ?>"><?php echo htmlspecialchars($rel['name']); ?></a>
+                            <p class="price"><?php echo format_price($rel_price); ?>
+                                <?php if ($rel_strike_price > $rel_price): ?>
+                                <del><?php echo format_price($rel_strike_price); ?></del>
+                                <?php endif; ?>
+                            </p>
+                            <p class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(0 reviews)</span>
+                            </p>
                         </div>
                     </div>
+                </div>
                 <?php endwhile; ?>
             </div>
         </div>
@@ -470,13 +474,75 @@ $related_products = $stmt_rel->get_result();
         RELATED PRODUCTS END
     =============================-->
 
-    <script>
-        // Pass variants data and pricing config to JS
-        const productVariants = <?php echo json_encode($variants); ?>;
-        const productImages = <?php echo json_encode($images); ?>;
-        const productId = <?php echo $product_id; ?>;
+    <!--=========================
+        FOOTER 2 START
+    ==========================-->
+    <?php include("includes/footer.php") ?>
+    <!--=========================
+        FOOTER 2 END
+    ==========================-->
 
-        <?php
+
+    <!--==========================
+        SCROLL BUTTON START
+    ===========================-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!--==========================
+        SCROLL BUTTON END
+    ===========================-->
+
+
+    <!--jquery library js-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="assets/js/Font-Awesome.js"></script>
+    <!--counter js-->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.min.js"></script>
+    <!--nice select js-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!--select 2 js-->
+    <script src="assets/js/select2.min.js"></script>
+    <!--simply countdown js-->
+    <script src="assets/js/simplyCountdown.js"></script>
+    <!--slick slider js-->
+    <script src="assets/js/slick.min.js"></script>
+    <!--venobox js-->
+    <script src="assets/js/venobox.min.js"></script>
+    <!--wow js-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--marquee js-->
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <!--pws tabs js-->
+    <script src="assets/js/jquery.pwstabs.min.js"></script>
+    <!--scroll button js-->
+    <script src="assets/js/scroll_button.js"></script>
+    <!--youtube background js-->
+    <script src="assets/js/jquery.youtube-background.min.js"></script>
+    <!--range slider js-->
+    <script src="assets/js/range_slider.js"></script>
+    <!--sticky sidebar js-->
+    <script src="assets/js/sticky_sidebar.js"></script>
+    <!--multiple image upload js-->
+    <script src="assets/js/multiple-image-video.js"></script>
+    <!--animated barfiller js-->
+    <script src="assets/js/animated_barfiller.js"></script>
+    <!--main/custom js-->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+    // Pass variants data and pricing config to JS
+    const productVariants = <?php echo json_encode($variants); ?>;
+    const productImages = <?php echo json_encode($images); ?>;
+    const productId = <?php echo $product_id; ?>;
+
+    <?php
         // Enforce Fresh Rules from DB (Fixes Session Stale Cache issues)
         // This ensures if Admin renames "Size 0" to "2 Inch", the user sees it immediately without re-login.
         if (function_exists('refresh_session_rules')) {
@@ -490,357 +556,353 @@ $related_products = $stmt_rel->get_result();
         }
         ?>
 
-        // Pricing Configuration
-        const pricingConfig = {
-            multiplier: <?php echo get_currency_multiplier(); ?>,
-            model: '<?php echo $pricing_model; ?>',
-            rules: <?php echo json_encode($formula_rules); ?>
-        };
+    // Pricing Configuration
+    const pricingConfig = {
+        multiplier: <?php echo get_currency_multiplier(); ?>,
+        model: '<?php echo $pricing_model; ?>',
+        rules: <?php echo json_encode($formula_rules); ?>
+    };
 
-        function calculatePriceJS(basePrice, sizeName) {
-            basePrice = parseFloat(basePrice);
+    function calculatePriceJS(basePrice, sizeName) {
+        basePrice = parseFloat(basePrice);
 
-            // Check if model indicates formula
-            if (pricingConfig.model.startsWith('formula_') && sizeName) {
-                let s = sizeName.trim();
+        // Check if model indicates formula
+        if (pricingConfig.model.startsWith('formula_') && sizeName) {
+            let s = sizeName.trim();
 
-                // Lookup rule for this size
-                if (pricingConfig.rules && pricingConfig.rules[s]) {
-                    let factor = parseFloat(pricingConfig.rules[s].factor);
-                    let constant = parseFloat(pricingConfig.rules[s].constant);
-                    return (basePrice * factor) + constant;
-                }
-
-                // Fallback to multiplier
-                return basePrice * pricingConfig.multiplier;
+            // Lookup rule for this size
+            if (pricingConfig.rules && pricingConfig.rules[s]) {
+                let factor = parseFloat(pricingConfig.rules[s].factor);
+                let constant = parseFloat(pricingConfig.rules[s].constant);
+                return (basePrice * factor) + constant;
             }
+
+            // Fallback to multiplier
             return basePrice * pricingConfig.multiplier;
         }
+        return basePrice * pricingConfig.multiplier;
+    }
 
-        function formatPriceJS(price) {
-            return "₹" + price.toFixed(2);
+    function formatPriceJS(price) {
+        return "₹" + price.toFixed(2);
+    }
+
+    function filterImages(color) {
+        // Filter images: match color or no color (universal)
+        let relevantImages = productImages;
+
+        if (color) {
+            // 1. Try to find images specifically for this color
+            const colorSpecific = productImages.filter(img => img.color && img.color.toLowerCase() === color
+                .toLowerCase());
+
+            if (colorSpecific.length > 0) {
+                relevantImages = colorSpecific;
+            } else {
+                // 2. If no color specific images, do we show ALL or just Generic?
+                // Typically if I select "Red" and there are no Red images, showing specific "Blue" images is wrong.
+                // So we show "Generic" (no color) images.
+                relevantImages = productImages.filter(img => !img.color);
+
+                // 3. If NO generic images either, fallback to ALL (last resort)
+                if (relevantImages.length === 0) relevantImages = productImages;
+            }
         }
 
-        function filterImages(color) {
-            // Filter images: match color or no color (universal)
-            let relevantImages = productImages;
+        const navContainer = $('.details_slider_nav');
+        const thumbContainer = $('.details_slider_thumb');
 
-            if (color) {
-                // 1. Try to find images specifically for this color
-                const colorSpecific = productImages.filter(img => img.color && img.color.toLowerCase() === color.toLowerCase());
+        // Destroy Slick
+        try {
+            thumbContainer.slick('unslick');
+            navContainer.slick('unslick');
+        } catch (e) {
+            console.log("Slick not initialized yet or error unslicking");
+        }
 
-                if (colorSpecific.length > 0) {
-                    relevantImages = colorSpecific;
-                } else {
-                    // 2. If no color specific images, do we show ALL or just Generic?
-                    // Typically if I select "Red" and there are no Red images, showing specific "Blue" images is wrong.
-                    // So we show "Generic" (no color) images.
-                    relevantImages = productImages.filter(img => !img.color);
+        // Clear DOM
+        navContainer.empty();
+        thumbContainer.empty();
 
-                    // 3. If NO generic images either, fallback to ALL (last resort)
-                    if (relevantImages.length === 0) relevantImages = productImages;
-                }
-            }
+        // Re-populate
+        relevantImages.forEach(img => {
+            const imgPath = 'assets/uploads/products/' + img.image_path;
 
-            const navContainer = $('.details_slider_nav');
-            const thumbContainer = $('.details_slider_thumb');
-
-            // Destroy Slick
-            try {
-                thumbContainer.slick('unslick');
-                navContainer.slick('unslick');
-            } catch (e) {
-                console.log("Slick not initialized yet or error unslicking");
-            }
-
-            // Clear DOM
-            navContainer.empty();
-            thumbContainer.empty();
-
-            // Re-populate
-            relevantImages.forEach(img => {
-                const imgPath = 'assets/uploads/products/' + img.image_path;
-
-                const navHtml = `
+            const navHtml = `
                     <div class="col-12">
                         <div class="details_slider_nav_item">
                             <img src="${imgPath}" alt="Product" class="img-fluid w-100">
                         </div>
                     </div>`;
 
-                const thumbHtml = `
+            const thumbHtml = `
                     <div class="col-12">
                         <div class="details_slider_thumb_item">
                             <img src="${imgPath}" alt="Product" class="img-fluid w-100">
                         </div>
                     </div>`;
 
-                navContainer.append(navHtml);
-                thumbContainer.append(thumbHtml);
-            });
+            navContainer.append(navHtml);
+            thumbContainer.append(thumbHtml);
+        });
 
-            // Re-init Slick with timeouts to ensure DOM is ready
+        // Re-init Slick with timeouts to ensure DOM is ready
+        setTimeout(() => {
+            $('.details_slider_thumb').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.details_slider_nav'
+            });
+            $('.details_slider_nav').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                asNavFor: '.details_slider_thumb',
+                dots: false,
+                arrows: false,
+                centerMode: true,
+                centerPadding: '0',
+                focusOnSelect: true,
+                vertical: true
+            });
+        }, 50);
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const sizeItems = document.querySelectorAll('.details_variant_size li');
+        const colorItems = document.querySelectorAll('.details_variant_color li');
+        const priceElement = document.getElementById('product-price');
+        const cartBtn = document.getElementById('add-to-cart-btn');
+
+        let selectedSize = null;
+
+        // Auto-select size if one is active from PHP
+        const activeSizeItem = document.querySelector('.details_variant_size li.active');
+        if (activeSizeItem) {
+            selectedSize = activeSizeItem.getAttribute('data-size');
+
+            // Trigger logic to handle initial state (colors, price)
+            // We wrap this in a timeout to ensure everything is ready or just call the logic directly.
+            // Simulating click is safest to ensuring all side effects run.
+            // But since we are in DB/PHP render, we can just run the logic.
+
+            // Let's simulate a click to be sure ALL UI logic runs (opacity of colors etc)
+            // Use setTimeout to allow initial render paints if needed, but 0 should be fine.
             setTimeout(() => {
-                $('.details_slider_thumb').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    fade: true,
-                    asNavFor: '.details_slider_nav'
-                });
-                $('.details_slider_nav').slick({
-                    slidesToShow: 5,
-                    slidesToScroll: 1,
-                    asNavFor: '.details_slider_thumb',
-                    dots: false,
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '0',
-                    focusOnSelect: true,
-                    vertical: true
-                });
-            }, 50);
+                activeSizeItem.click();
+            }, 0);
         }
 
+        let selectedColor = null;
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const sizeItems = document.querySelectorAll('.details_variant_size li');
-            const colorItems = document.querySelectorAll('.details_variant_color li');
-            const priceElement = document.getElementById('product-price');
-            const addToCartBtn = document.querySelector('.common_btn[href="#"]'); // More specific selector might be needed if multiple common_btn
-            // Let's target the exact Add to Cart button. It usually has "Add to cart" text.
-            const btns = document.querySelectorAll('.common_btn');
-            let cartBtn = null;
-            btns.forEach(b => {
-                if (b.textContent.toLowerCase().includes('add to cart')) cartBtn = b;
-            });
+        function updatePrice() {
+            let relevantVariants = productVariants;
 
-            let selectedSize = null;
-            
-            // Auto-select size if one is active from PHP
-            const activeSizeItem = document.querySelector('.details_variant_size li.active');
-            if (activeSizeItem) {
-                selectedSize = activeSizeItem.getAttribute('data-size');
-                
-                // Trigger logic to handle initial state (colors, price)
-                // We wrap this in a timeout to ensure everything is ready or just call the logic directly.
-                // Simulating click is safest to ensuring all side effects run.
-                // But since we are in DB/PHP render, we can just run the logic.
-                
-                // Let's simulate a click to be sure ALL UI logic runs (opacity of colors etc)
-                // Use setTimeout to allow initial render paints if needed, but 0 should be fine.
-                setTimeout(() => {
-                   activeSizeItem.click(); 
-                }, 0);
+            if (selectedSize) {
+                relevantVariants = relevantVariants.filter(v => v.variant_name === selectedSize);
             }
 
-            let selectedColor = null;
+            if (selectedColor) {
+                relevantVariants = relevantVariants.filter(v => v.color === selectedColor);
+            }
 
-            function updatePrice() {
-                let relevantVariants = productVariants;
+            if (relevantVariants.length > 0) {
+                // Calculate prices for all relevant variants using the new logic
+                const prices = relevantVariants.map(v => {
+                    let sizeName = v.variant_name;
+                    return calculatePriceJS(v.price, sizeName);
+                });
 
-                if (selectedSize) {
-                    relevantVariants = relevantVariants.filter(v => v.variant_name === selectedSize);
-                }
-
-                if (selectedColor) {
-                    relevantVariants = relevantVariants.filter(v => v.color === selectedColor);
-                }
-
-                if (relevantVariants.length > 0) {
-                    // Calculate prices for all relevant variants using the new logic
-                    const prices = relevantVariants.map(v => {
+                // Calculate strike prices if available
+                const strikePrices = relevantVariants
+                    .filter(v => v.strike_price && parseFloat(v.strike_price) > 0)
+                    .map(v => {
                         let sizeName = v.variant_name;
-                        return calculatePriceJS(v.price, sizeName);
+                        return calculatePriceJS(v.strike_price, sizeName);
                     });
 
-                    // Calculate strike prices if available
-                    const strikePrices = relevantVariants
-                        .filter(v => v.strike_price && parseFloat(v.strike_price) > 0)
-                        .map(v => {
-                            let sizeName = v.variant_name;
-                            return calculatePriceJS(v.strike_price, sizeName);
-                        });
+                const minP = Math.min(...prices);
+                const maxP = Math.max(...prices);
 
-                    const minP = Math.min(...prices);
-                    const maxP = Math.max(...prices);
-
-                    // Build price display
-                    let priceHTML = '';
-                    if (minP === maxP) {
-                        priceHTML = formatPriceJS(minP);
-                    } else {
-                        priceHTML = formatPriceJS(minP) + " - " + formatPriceJS(maxP);
-                    }
-
-                    // Add strike price if available
-                    if (strikePrices.length > 0) {
-                        const minStrike = Math.min(...strikePrices);
-                        const maxStrike = Math.max(...strikePrices);
-                        let strikeHTML = '';
-                        if (minStrike === maxStrike) {
-                            strikeHTML = ' <del style="color: #999;">' + formatPriceJS(minStrike) + '</del>';
-                        } else {
-                            strikeHTML = ' <del style="color: #999;">' + formatPriceJS(minStrike) + ' - ' + formatPriceJS(maxStrike) + '</del>';
-                        }
-                        priceHTML += strikeHTML;
-                    }
-
-                    priceElement.innerHTML = priceHTML;
+                // Build price display
+                let priceHTML = '';
+                if (minP === maxP) {
+                    priceHTML = formatPriceJS(minP);
+                } else {
+                    priceHTML = formatPriceJS(minP) + " - " + formatPriceJS(maxP);
                 }
-            }
 
-            // Helper to get variants by size
-            function getVariantsBySize(size) {
-                return productVariants.filter(v => v.variant_name === size);
-            }
-
-            sizeItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    // 1. Handle Active State
-                    sizeItems.forEach(li => li.classList.remove('active'));
-                    this.classList.add('active');
-
-                    selectedSize = this.getAttribute('data-size');
-
-                    // Filter logic for colors
-                    const relevantVariants = getVariantsBySize(selectedSize);
-                    const availableColors = relevantVariants.map(v => v.color);
-
-                    // Reset color selection if not available
-                    if (selectedColor && !availableColors.includes(selectedColor)) {
-                        selectedColor = null;
-                        colorItems.forEach(c => c.classList.remove('active'));
+                // Add strike price if available
+                if (strikePrices.length > 0) {
+                    const minStrike = Math.min(...strikePrices);
+                    const maxStrike = Math.max(...strikePrices);
+                    let strikeHTML = '';
+                    if (minStrike === maxStrike) {
+                        strikeHTML = ' <del style="color: #999;">' + formatPriceJS(minStrike) + '</del>';
+                    } else {
+                        strikeHTML = ' <del style="color: #999;">' + formatPriceJS(minStrike) + ' - ' +
+                            formatPriceJS(maxStrike) + '</del>';
                     }
+                    priceHTML += strikeHTML;
+                }
 
-                    colorItems.forEach(colorLi => {
-                        const colorVal = colorLi.getAttribute('data-color');
-                        if (availableColors.includes(colorVal)) {
-                            colorLi.style.opacity = '1';
-                            colorLi.style.pointerEvents = 'auto';
-                            colorLi.style.border = '1px solid #ddd';
-                        } else {
-                            colorLi.style.opacity = '0.3';
-                            colorLi.style.pointerEvents = 'none';
-                            colorLi.style.border = '1px dashed #ccc';
-                        }
-                    });
-
-                    updatePrice();
-                });
-            });
-
-            colorItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    // If disabled/opacity low, usually pointer-events: none handles it, but good to check
-                    if (window.getComputedStyle(this).pointerEvents === 'none') return;
-
-                    colorItems.forEach(li => li.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedColor = this.getAttribute('data-color');
-
-                    updatePrice();
-                    filterImages(selectedColor); // Update slider
-                });
-            });
-
-            if (cartBtn) {
-                cartBtn.addEventListener('click', function (e) {
-                    addToCart(e, false);
-                });
+                priceElement.innerHTML = priceHTML;
             }
+        }
 
-            const buyNowBtn = document.querySelector('.buy_now');
-            if (buyNowBtn) {
-                buyNowBtn.addEventListener('click', function (e) {
-                    addToCart(e, true);
-                });
-            }
+        // Helper to get variants by size
+        function getVariantsBySize(size) {
+            return productVariants.filter(v => v.variant_name === size);
+        }
 
-            // Quantity Buttons
-            const qtyInput = document.querySelector('.details_qty_input input');
-            const minusBtn = document.querySelector('.details_qty_input .minus');
-            const plusBtn = document.querySelector('.details_qty_input .plus');
+        sizeItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 1. Handle Active State
+                sizeItems.forEach(li => li.classList.remove('active'));
+                this.classList.add('active');
 
-            if (qtyInput && minusBtn && plusBtn) {
-                minusBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    let currentVal = parseInt(qtyInput.value) || 1;
-                    if (currentVal > 1) {
-                        qtyInput.value = currentVal - 1;
+                selectedSize = this.getAttribute('data-size');
+
+                // Filter logic for colors
+                const relevantVariants = getVariantsBySize(selectedSize);
+                const availableColors = relevantVariants.map(v => v.color);
+
+                // Reset color selection if not available
+                if (selectedColor && !availableColors.includes(selectedColor)) {
+                    selectedColor = null;
+                    colorItems.forEach(c => c.classList.remove('active'));
+                }
+
+                colorItems.forEach(colorLi => {
+                    const colorVal = colorLi.getAttribute('data-color');
+                    if (availableColors.includes(colorVal)) {
+                        colorLi.style.opacity = '1';
+                        colorLi.style.pointerEvents = 'auto';
+                        colorLi.style.border = '1px solid #ddd';
+                    } else {
+                        colorLi.style.opacity = '0.3';
+                        colorLi.style.pointerEvents = 'none';
+                        colorLi.style.border = '1px dashed #ccc';
                     }
                 });
 
-                plusBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    let currentVal = parseInt(qtyInput.value) || 1;
-                    qtyInput.value = currentVal + 1;
-                });
-            }
+                updatePrice();
+            });
+        });
 
-            function addToCart(e, isBuyNow) {
+        colorItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // If disabled/opacity low, usually pointer-events: none handles it, but good to check
+                if (window.getComputedStyle(this).pointerEvents === 'none') return;
+
+                colorItems.forEach(li => li.classList.remove('active'));
+                this.classList.add('active');
+                selectedColor = this.getAttribute('data-color');
+
+                updatePrice();
+                filterImages(selectedColor); // Update slider
+            });
+        });
+
+        if (cartBtn) {
+            cartBtn.addEventListener('click', function(e) {
+                addToCart(e, false);
+            });
+        }
+
+        const buyNowBtn = document.querySelector('.buy_now');
+        if (buyNowBtn) {
+            buyNowBtn.addEventListener('click', function(e) {
+                addToCart(e, true);
+            });
+        }
+
+        // Quantity Buttons
+        const qtyInput = document.querySelector('.details_qty_input input');
+        const minusBtn = document.querySelector('.details_qty_input .minus');
+        const plusBtn = document.querySelector('.details_qty_input .plus');
+
+        if (qtyInput && minusBtn && plusBtn) {
+            minusBtn.addEventListener('click', function(e) {
                 e.preventDefault();
+                let currentVal = parseInt(qtyInput.value) || 1;
+                if (currentVal > 1) {
+                    qtyInput.value = currentVal - 1;
+                }
+            });
 
-                // Validation
-                const hasSizes = sizeItems.length > 0;
-                const hasColors = colorItems.length > 0;
+            plusBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let currentVal = parseInt(qtyInput.value) || 1;
+                qtyInput.value = currentVal + 1;
+            });
+        }
 
-                if (hasSizes && !selectedSize) {
-                    alert("Please select a size.");
+        function addToCart(e, isBuyNow) {
+            e.preventDefault();
+
+            // Validation
+            const hasSizes = sizeItems.length > 0;
+            const hasColors = colorItems.length > 0;
+
+            if (hasSizes && !selectedSize) {
+                alert("Please select a size.");
+                return;
+            }
+            if (hasColors && !selectedColor) {
+                alert("Please select a color.");
+                return;
+            }
+
+            // Find Variant ID
+            let variantId = null;
+            if (productVariants.length > 0) {
+                const variant = productVariants.find(v => {
+                    const sizeMatch = !selectedSize || v.variant_name === selectedSize;
+                    const colorMatch = !selectedColor || v.color === selectedColor;
+                    return sizeMatch && colorMatch;
+                });
+                if (variant) {
+                    variantId = variant.id;
+                } else {
+                    alert("Selected combination is unavailable.");
                     return;
                 }
-                if (hasColors && !selectedColor) {
-                    alert("Please select a color.");
-                    return;
-                }
+            }
 
-                // Find Variant ID
-                let variantId = null;
-                if (productVariants.length > 0) {
-                    const variant = productVariants.find(v => {
-                        const sizeMatch = !selectedSize || v.variant_name === selectedSize;
-                        const colorMatch = !selectedColor || v.color === selectedColor;
-                        return sizeMatch && colorMatch;
-                    });
-                    if (variant) {
-                        variantId = variant.id;
-                    } else {
-                        alert("Selected combination is unavailable.");
-                        return;
-                    }
-                }
+            const qty = parseInt(qtyInput ? qtyInput.value : 1) || 1;
 
-                const qty = parseInt(qtyInput ? qtyInput.value : 1) || 1;
-
-                // Send to Cart
-                fetch('includes/cart_actions.php', {
+            // Send to Cart
+            fetch('includes/cart_actions.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     },
                     body: `action=add&product_id=${productId}&variant_id=${variantId}&quantity=${qty}`
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            if (isBuyNow) {
-                                window.location.href = 'checkout'; // Fixed: Clean URL
-                            } else {
-                                alert("Product added to cart!");
-                                // Optionally update header cart count if present
-                                location.reload();
-                            }
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        if (isBuyNow) {
+                            window.location.href = 'checkout'; // Fixed: Clean URL
                         } else {
-                            alert(data.message || "Failed to add to cart.");
+                            alert("Product added to cart!");
+                            // Optionally update header cart count if present
+                            location.reload();
                         }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert("An error occurred.");
-                    });
-            }
+                    } else {
+                        alert(data.message || "Failed to add to cart.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred.");
+                });
+        }
 
-        });
+    });
     </script>
 
 </body>

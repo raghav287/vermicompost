@@ -51,7 +51,7 @@
                         <div class="page_banner_text wow fadeInUp">
                             <h1>Category</h1>
                             <ul>
-                                <li><a href="#"><i class="fal fa-home-lg"></i> Home</a></li>
+                                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="#">Category</a></li>
                             </ul>
                         </div>

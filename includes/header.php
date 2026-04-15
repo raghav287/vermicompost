@@ -25,109 +25,109 @@
     }
     ?>
     <style>
-        .search_results_dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            border: 1px solid #e1e1e1;
-            border-top: none;
-            z-index: 99999;
-            max-height: 400px;
-            overflow-y: auto;
-            display: none;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 0 0 8px 8px;
-        }
+    .search_results_dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #e1e1e1;
+        border-top: none;
+        z-index: 99999;
+        max-height: 400px;
+        overflow-y: auto;
+        display: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+    }
 
-        .search_results_dropdown ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .search_results_dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .search_results_dropdown li {
-            border-bottom: 1px solid #f5f5f5;
-        }
+    .search_results_dropdown li {
+        border-bottom: 1px solid #f5f5f5;
+    }
 
-        .search_results_dropdown li:last-child {
-            border-bottom: none;
-        }
+    .search_results_dropdown li:last-child {
+        border-bottom: none;
+    }
 
-        .search_results_dropdown a {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            text-decoration: none;
-            color: #222;
-            transition: all 0.3s ease;
-        }
+    .search_results_dropdown a {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        text-decoration: none;
+        color: #222;
+        transition: all 0.3s ease;
+    }
 
-        .search_results_dropdown a:hover {
-            background: #f8f9fa;
-        }
+    .search_results_dropdown a:hover {
+        background: #f8f9fa;
+    }
 
-        .search_results_dropdown .img_box {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            margin-right: 15px;
-            border-radius: 6px;
-            overflow: hidden;
-            background: #f1f1f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .search_results_dropdown .img_box {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        margin-right: 15px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .search_results_dropdown .img_box img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover;
-            display: block;
-        }
+    .search_results_dropdown .img_box img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        display: block;
+    }
 
-        .search_results_dropdown .info {
-            flex: 1;
-        }
+    .search_results_dropdown .info {
+        flex: 1;
+    }
 
-        .search_results_dropdown .info h5 {
-            font-size: 15px;
-            margin: 0 0 4px;
-            font-weight: 600;
-            color: #333;
-            line-height: 1.2;
-        }
+    .search_results_dropdown .info h5 {
+        font-size: 15px;
+        margin: 0 0 4px;
+        font-weight: 600;
+        color: #333;
+        line-height: 1.2;
+    }
 
-        .search_results_dropdown .info span {
-            font-size: 13px;
-            color: #e53637;
-            /* Theme color ideally */
-            font-weight: 500;
-        }
+    .search_results_dropdown .info span {
+        font-size: 13px;
+        color: #e53637;
+        /* Theme color ideally */
+        font-weight: 500;
+    }
 
-        /* Scrollbar Styling */
-        .search_results_dropdown::-webkit-scrollbar {
-            width: 6px;
-        }
+    /* Scrollbar Styling */
+    .search_results_dropdown::-webkit-scrollbar {
+        width: 6px;
+    }
 
-        .search_results_dropdown::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
+    .search_results_dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
-        .search_results_dropdown::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 3px;
-        }
+    .search_results_dropdown::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
 
-        .search_results_dropdown::-webkit-scrollbar-thumb:hover {
-            background: #aaa;
-        }
+    .search_results_dropdown::-webkit-scrollbar-thumb:hover {
+        background: #aaa;
+    }
 
-        .header_search_form {
-            position: relative;
-        }
+    .header_search_form {
+        position: relative;
+    }
     </style>
     <div class="container">
         <div class="row align-items-center">
@@ -139,7 +139,7 @@
                     </a>
                     <div class="mobile_menu_icon d-block d-lg-none" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                        <span class="mobile_menu_icon"><i class="far fa-stream menu_icon_bar"></i></span>
+                        <span class="mobile_menu_icon"><i class="fas fa-stream menu_icon_bar"></i></span>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                 <form action="#" class="header_search_form">
                     <div class="input w-100">
                         <input type="text" id="searchInput" placeholder="Search your product..." autocomplete="off">
-                        <button type="submit"><i class="far fa-search"></i></button>
+                        <button type="submit"><i class="fas fa-search"></i></button>
                     </div>
                     <div id="searchResults" class="search_results_dropdown"></div>
                 </form>
@@ -156,7 +156,7 @@
                 <div class="header_support_user d-flex flex-wrap">
                     <div class="header_support">
                         <span class="icon">
-                            <i class="far fa-phone-alt"></i>
+                            <i class="fas fa-phone-alt"></i>
                         </span>
                         <h3>
                             Helpline:
@@ -166,7 +166,7 @@
                         </h3>
 
                         <span class="icon" style="margin-left: 10px">
-                            <i class="far fa-envelope"></i>
+                            <i class="fas fa-envelope"></i>
                         </span>
                         <h3>
                             Email:
@@ -214,7 +214,7 @@
                         $is_logged_in = isset($_SESSION['user_id']);
                         $user_name = $is_logged_in ? ($_SESSION['user_name'] ?? 'User') : 'Guest';
                         ?>
-                        <li>
+                        <!-- <li>
                             <a class="user" href="#">
                                 <b>
                                     <img src="<?php echo $header_path_prefix; ?>assets/images/user_icon_black.svg"
@@ -287,7 +287,7 @@
                                     </li>
                                 <?php endif; ?>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -300,7 +300,7 @@
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel"> my cart <span id="drawer_cart_count">(0)</span></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                    class="far fa-times"></i></button>
+                    class="fas fa-times"></i></button>
         </div>
         <div class="offcanvas-body">
             <ul id="mini_cart_list">
@@ -324,7 +324,7 @@
 <div class="mobile_menu_area">
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                class="fal fa-times"></i></button>
+                class="fas fa-times"></i></button>
         <div class="offcanvas-body">
             <ul class="mobile_menu_header d-flex flex-wrap">
                 <li>
@@ -345,7 +345,7 @@
 
             <form class="mobile_menu_search" onsubmit="return false;">
                 <input type="text" placeholder="Search" id="mobileSearchInput">
-                <button type="submit"><i class="far fa-search"></i></button>
+                <button type="submit"><i class="fas fa-search"></i></button>
             </form>
             <div id="mobileSearchResults" class="search_results_dropdown"
                 style="position:relative; top:0; box-shadow:none; border:none; max-height:none;"></div>
@@ -369,9 +369,9 @@
                         aria-labelledby="pills-home-tab" tabindex="0">
                         <ul class="main_mobile_menu">
                             <?php foreach ($header_categories as $h_cat): ?>
-                                <li><a
-                                        href="<?php echo $header_path_prefix; ?>shop.php?category=<?php echo $h_cat['id']; ?>"><?php echo htmlspecialchars($h_cat['name']); ?></a>
-                                </li>
+                            <li><a
+                                    href="<?php echo $header_path_prefix; ?>shop.php?category=<?php echo $h_cat['id']; ?>"><?php echo htmlspecialchars($h_cat['name']); ?></a>
+                            </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -394,56 +394,58 @@
         MOBILE MENU END
     ==============================-->
 <script>
-    function loadMiniCart() {
-        const prefix = "<?php echo $header_path_prefix; ?>";
-        fetch(prefix + 'includes/cart_actions.php', {
+function loadMiniCart() {
+    const prefix = "<?php echo $header_path_prefix; ?>";
+    fetch(prefix + 'includes/cart_actions.php', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             body: 'action=fetch'
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    const headerCount = document.getElementById('header_cart_count');
-                    if (headerCount) headerCount.innerText = data.count;
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                const headerCount = document.getElementById('header_cart_count');
+                if (headerCount) headerCount.innerText = data.count;
 
-                    const drawerCount = document.getElementById('drawer_cart_count');
-                    if (drawerCount) drawerCount.innerText = '(' + data.count + ')';
+                const drawerCount = document.getElementById('drawer_cart_count');
+                if (drawerCount) drawerCount.innerText = '(' + data.count + ')';
 
-                    const mobileCount = document.getElementById('mobile_cart_count');
-                    if (mobileCount) mobileCount.innerText = data.count;
+                const mobileCount = document.getElementById('mobile_cart_count');
+                if (mobileCount) mobileCount.innerText = data.count;
 
-                    const subtotal = document.getElementById('mini_cart_subtotal');
-                    if (subtotal) subtotal.innerText = '₹' + parseFloat(data.total).toFixed(2);
+                const subtotal = document.getElementById('mini_cart_subtotal');
+                if (subtotal) subtotal.innerText = '₹' + parseFloat(data.total).toFixed(2);
 
-                    const list = document.getElementById('mini_cart_list');
-                    if (list) {
-                        list.innerHTML = '';
+                const list = document.getElementById('mini_cart_list');
+                if (list) {
+                    list.innerHTML = '';
 
-                        if (data.items.length === 0) {
-                            list.innerHTML = '<li style="text-align:center;">Your cart is empty</li>';
-                        } else {
-                            data.items.forEach(item => {
-                                // Adjust image path for cart items if needed
-                                // Backend usually returns relative to root assets/...
-                                // If we are in user/, we need ../assets/...
-                                // But data.items seems to already contain image_path. 
-                                // Let's check how image_path is stored. 
-                                // checkout.php: 'assets/uploads/products/' . $item['image_path']
-                                // If I am in user/, I need to prepend prefix.
-                                let imgPath = item.image || item.image_path; // Cart action might return 'image'
-                                // If path already has ../ dont add it?
-                                // Better: cart_actions usually returns what checkout.php does.
-                                // checkout said: $item['image'] = 'assets/uploads/products/'...
+                    if (data.items.length === 0) {
+                        list.innerHTML = '<li style="text-align:center;">Your cart is empty</li>';
+                    } else {
+                        data.items.forEach(item => {
+                            // Adjust image path for cart items if needed
+                            // Backend usually returns relative to root assets/...
+                            // If we are in user/, we need ../assets/...
+                            // But data.items seems to already contain image_path. 
+                            // Let's check how image_path is stored. 
+                            // checkout.php: 'assets/uploads/products/' . $item['image_path']
+                            // If I am in user/, I need to prepend prefix.
+                            let imgPath = item.image || item.image_path; // Cart action might return 'image'
+                            // If path already has ../ dont add it?
+                            // Better: cart_actions usually returns what checkout.php does.
+                            // checkout said: $item['image'] = 'assets/uploads/products/'...
 
-                                // Let's simplify: Prepend user prefix to the path returned.
-                                // If path doesn't start with http...
-                                if (imgPath && !imgPath.startsWith('http') && !imgPath.startsWith('../')) {
-                                    imgPath = prefix + imgPath;
-                                }
+                            // Let's simplify: Prepend user prefix to the path returned.
+                            // If path doesn't start with http...
+                            if (imgPath && !imgPath.startsWith('http') && !imgPath.startsWith('../')) {
+                                imgPath = prefix + imgPath;
+                            }
 
-                                const li = document.createElement('li');
-                                li.innerHTML = `
+                            const li = document.createElement('li');
+                            li.innerHTML = `
                             <a href="${prefix}shop-details.php?id=${item.product_id}" class="cart_img">
                                 <img src="${imgPath}" alt="product" class="img-fluid w-100">
                             </a>
@@ -453,86 +455,90 @@
                                 ${item.size ? `<span><b>Size:</b> ${item.size}</span>` : ''}
                                 ${item.color ? `<span><b>Color:</b> ${item.color}</span>` : ''}
                             </div>
-                            <a class="del_icon" href="#" onclick="removeFromCart(${item.cart_id}, event)"><i class="fal fa-times"></i></a>
+                            <a class="del_icon" href="#" onclick="removeFromCart(${item.cart_id}, event)"><i class="fas fa-times"></i></a>
                         `;
-                                list.appendChild(li);
-                            });
-                        }
+                            list.appendChild(li);
+                        });
                     }
                 }
-            })
-            .catch(error => console.error('Error loading cart:', error));
-    }
+            }
+        })
+        .catch(error => console.error('Error loading cart:', error));
+}
 
-    function removeFromCart(cartId, event) {
-        if (event) event.preventDefault();
-        if (!confirm('Remove this item?')) return;
+function removeFromCart(cartId, event) {
+    if (event) event.preventDefault();
+    if (!confirm('Remove this item?')) return;
 
-        const prefix = "<?php echo $header_path_prefix; ?>";
+    const prefix = "<?php echo $header_path_prefix; ?>";
 
-        fetch(prefix + 'includes/cart_actions.php', {
+    fetch(prefix + 'includes/cart_actions.php', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             body: 'action=remove&cart_id=' + cartId
         })
-            .then(resp => resp.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    loadMiniCart();
-                    // If on cart page, maybe reload there too?
-                    if (window.location.pathname.includes('cart.php')) location.reload();
+        .then(resp => resp.json())
+        .then(data => {
+            if (data.status === 'success') {
+                loadMiniCart();
+                // If on cart page, maybe reload there too?
+                if (window.location.pathname.includes('cart.php')) location.reload();
+            }
+        });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadMiniCart();
+
+    // Search Logic (Desktop & Mobile)
+    function initSearch(inputId, resultsId) {
+        const searchInput = document.getElementById(inputId);
+        const searchResults = document.getElementById(resultsId);
+        const prefix = "<?php echo $header_path_prefix; ?>";
+        let debounceTimer;
+
+        if (searchInput && searchResults) {
+            searchInput.addEventListener('input', function() {
+                const term = this.value.trim();
+                clearTimeout(debounceTimer);
+
+                if (term.length < 2) {
+                    searchResults.style.display = 'none';
+                    searchResults.innerHTML = '';
+                    return;
                 }
-            });
-    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        loadMiniCart();
-
-        // Search Logic (Desktop & Mobile)
-        function initSearch(inputId, resultsId) {
-            const searchInput = document.getElementById(inputId);
-            const searchResults = document.getElementById(resultsId);
-            const prefix = "<?php echo $header_path_prefix; ?>";
-            let debounceTimer;
-
-            if (searchInput && searchResults) {
-                searchInput.addEventListener('input', function () {
-                    const term = this.value.trim();
-                    clearTimeout(debounceTimer);
-
-                    if (term.length < 2) {
-                        searchResults.style.display = 'none';
-                        searchResults.innerHTML = '';
-                        return;
-                    }
-
-                    debounceTimer = setTimeout(() => {
-                        fetch(prefix + 'includes/search_products.php?term=' + encodeURIComponent(term))
-                            .then(res => {
-                                if (!res.ok) {
-                                    throw new Error('Network response was not ok');
+                debounceTimer = setTimeout(() => {
+                    fetch(prefix + 'includes/search_products.php?term=' + encodeURIComponent(
+                            term))
+                        .then(res => {
+                            if (!res.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return res.text().then(text => {
+                                try {
+                                    return JSON.parse(text);
+                                } catch (e) {
+                                    console.log('Search Raw Response:', text);
+                                    throw new Error('Invalid JSON');
                                 }
-                                return res.text().then(text => {
-                                    try {
-                                        return JSON.parse(text);
-                                    } catch (e) {
-                                        console.log('Search Raw Response:', text);
-                                        throw new Error('Invalid JSON');
+                            });
+                        })
+                        .then(data => {
+                            // console.log('Search Data:', data);
+                            if (data.status === 'success' && data.data.length > 0) {
+                                let html = '<ul>';
+                                data.data.forEach(prod => {
+                                    let img = prod.image;
+                                    // Handle image path
+                                    if (img && !img.startsWith('http') && !img
+                                        .startsWith('../')) {
+                                        img = prefix + img;
                                     }
-                                });
-                            })
-                            .then(data => {
-                                // console.log('Search Data:', data);
-                                if (data.status === 'success' && data.data.length > 0) {
-                                    let html = '<ul>';
-                                    data.data.forEach(prod => {
-                                        let img = prod.image;
-                                        // Handle image path
-                                        if (img && !img.startsWith('http') && !img.startsWith('../')) {
-                                            img = prefix + img;
-                                        }
 
-                                        html += `<li>
+                                    html += `<li>
                                             <a href="${prefix}shop-details.php?id=${prod.id}">
                                                 <div class="img_box">
                                                     <img src="${img}" alt="${prod.name}">
@@ -543,32 +549,33 @@
                                                 </div>
                                             </a>
                                         </li>`;
-                                    });
-                                    html += '</ul>';
-                                    searchResults.innerHTML = html;
-                                    searchResults.style.display = 'block';
-                                } else {
-                                    searchResults.innerHTML = '<div style="padding:10px;">No products found</div>';
-                                    searchResults.style.display = 'block';
-                                }
-                            })
-                            .catch(err => {
-                                console.error('Search Error:', err);
-                                // Optional: Show error in UI
-                            });
-                    }, 300);
-                });
+                                });
+                                html += '</ul>';
+                                searchResults.innerHTML = html;
+                                searchResults.style.display = 'block';
+                            } else {
+                                searchResults.innerHTML =
+                                    '<div style="padding:10px;">No products found</div>';
+                                searchResults.style.display = 'block';
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Search Error:', err);
+                            // Optional: Show error in UI
+                        });
+                }, 300);
+            });
 
-                // Hide on click outside
-                document.addEventListener('click', function (e) {
-                    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                        searchResults.style.display = 'none';
-                    }
-                });
-            }
+            // Hide on click outside
+            document.addEventListener('click', function(e) {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.style.display = 'none';
+                }
+            });
         }
+    }
 
-        initSearch('searchInput', 'searchResults');
-        initSearch('mobileSearchInput', 'mobileSearchResults');
-    });
+    initSearch('searchInput', 'searchResults');
+    initSearch('mobileSearchInput', 'mobileSearchResults');
+});
 </script>

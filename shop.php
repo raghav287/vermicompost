@@ -169,7 +169,7 @@ $products_result = $stmt->get_result();
                         <div class="page_banner_text wow fadeInUp">
                             <h1>Shop</h1>
                             <ul>
-                                <li><a href="index"><i class="fal fa-home-lg"></i> Home</a></li>
+                                <li><a href="index"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="shop">Shop</a></li>
                             </ul>
                         </div>

@@ -56,7 +56,7 @@ include 'admin/db.php';
                         <div class="page_banner_text wow fadeInUp">
                             <h1>Cart View</h1>
                             <ul>
-                                <li><a href="#"><i class="fal fa-home-lg"></i> Home</a></li>
+                                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="#">Cart View</a></li>
                             </ul>
                         </div>
@@ -171,11 +171,11 @@ include 'admin/db.php';
                                                     <div class="details_qty_input">
                                                         <button class="minus"
                                                             onclick="updateCartQty(<?php echo $item['cart_id']; ?>, -1)"><i
-                                                                class="fal fa-minus" aria-hidden="true"></i></button>
+                                                                class="fas fa-minus" aria-hidden="true"></i></button>
                                                         <input type="text" value="<?php echo $item['quantity']; ?>" readonly>
                                                         <button class="plus"
                                                             onclick="updateCartQty(<?php echo $item['cart_id']; ?>, 1)"><i
-                                                                class="fal fa-plus" aria-hidden="true"></i></button>
+                                                                class="fas fa-plus" aria-hidden="true"></i></button>
                                                     </div>
                                                 </td>
                                                 <td class="cart_page_total">
@@ -184,7 +184,7 @@ include 'admin/db.php';
                                                 <td class="cart_page_action">
                                                     <a href="#"
                                                         onclick="removeFromCart(<?php echo $item['cart_id']; ?>, event)"> <i
-                                                            class="fal fa-times"></i> Remove</a>
+                                                            class="fas fa-times"></i> Remove</a>
                                                 </td>
                                             </tr>
                                             <?php
