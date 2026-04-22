@@ -362,13 +362,13 @@ $current_country_id = $_SESSION['selected_country_id'] ?? null;
                                     </div>
                                 <?php endif; ?>
                                 <?php if (($site_settings['razorpay_active'] ?? '1') == '1'): ?>
-                                <div class="form-check" id="online_payment_section">
+                                <!-- <div class="form-check" id="online_payment_section">
                                     <input class="form-check-input payment-radio" type="radio" name="payment_method"
                                         id="online" value="Online" <?php echo !$cod_active ? 'checked' : ''; ?>>
                                     <label class="form-check-label" for="online">
                                         Online Payment (Razorpay)
                                     </label>
-                                </div>
+                                </div> -->
                                 <?php endif; ?>
                                 <div class="form-check" id="payu_payment_section">
                                     <input class="form-check-input payment-radio" type="radio" name="payment_method"
@@ -520,6 +520,9 @@ $current_country_id = $_SESSION['selected_country_id'] ?? null;
                 .then(data => {
                     if (data.status === 'success') {
                         window.location.href = data.redirect_url ? data.redirect_url : 'payment-success';
+                    } else if (data.status === 'payu_init') {
+                        // Redirect to PayU payment handler
+                        window.location.href = data.redirect_url;
                     } else if (data.status === 'razorpay_init') {
                         // Initialize Razorpay
                         var options = {

@@ -138,8 +138,8 @@ include 'admin/db.php';
                                             $cart_total += $subtotal;
                                             $img = $item['image_path'] ? 'assets/uploads/products/' . $item['image_path'] : 'assets/images/no_image.png';
                                             ?>
-                                            <tr id="cart_row_<?php echo $item['cart_id']; ?>">
-                                                <!--
+                                    <tr id="cart_row_<?php echo $item['cart_id']; ?>">
+                                        <!--
                                                 <td class="cart_page_checkbox">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value=""
@@ -147,47 +147,47 @@ include 'admin/db.php';
                                                     </div>
                                                 </td>
                                                 -->
-                                                <td class="cart_page_img">
-                                                    <div class="img">
-                                                        <img src="<?php echo htmlspecialchars($img); ?>" alt="Products"
-                                                            class="img-fluid w-100">
-                                                    </div>
-                                                </td>
-                                                <td class="cart_page_details">
-                                                    <a class="title"
-                                                        href="shop-details?id=<?php echo $item['product_id']; ?>"><?php echo htmlspecialchars($item['name']); ?></a>
-                                                    <!--<p>$59.00 <del>$65.00</del></p>-->
-                                                    <?php if ($item['color']): ?>
-                                                        <span><b>Color:</b> <?php echo htmlspecialchars($item['color']); ?></span>
-                                                    <?php endif; ?>
-                                                    <?php if ($item['size']): ?>
-                                                        <span><b>Size:</b> <?php echo htmlspecialchars($item['size']); ?></span>
-                                                    <?php endif; ?>
-                                                </td>
-                                                <td class="cart_page_price">
-                                                    <h3>₹<?php echo number_format($display_price, 2); ?></h3>
-                                                </td>
-                                                <td class="cart_page_quantity">
-                                                    <div class="details_qty_input">
-                                                        <button class="minus"
-                                                            onclick="updateCartQty(<?php echo $item['cart_id']; ?>, -1)"><i
-                                                                class="fas fa-minus" aria-hidden="true"></i></button>
-                                                        <input type="text" value="<?php echo $item['quantity']; ?>" readonly>
-                                                        <button class="plus"
-                                                            onclick="updateCartQty(<?php echo $item['cart_id']; ?>, 1)"><i
-                                                                class="fas fa-plus" aria-hidden="true"></i></button>
-                                                    </div>
-                                                </td>
-                                                <td class="cart_page_total">
-                                                    <h3>₹<?php echo number_format($subtotal, 2); ?></h3>
-                                                </td>
-                                                <td class="cart_page_action">
-                                                    <a href="#"
-                                                        onclick="removeFromCart(<?php echo $item['cart_id']; ?>, event)"> <i
-                                                            class="fas fa-times"></i> Remove</a>
-                                                </td>
-                                            </tr>
-                                            <?php
+                                        <td class="cart_page_img">
+                                            <div class="img">
+                                                <img src="<?php echo htmlspecialchars($img); ?>" alt="Products"
+                                                    class="img-fluid w-100">
+                                            </div>
+                                        </td>
+                                        <td class="cart_page_details">
+                                            <a class="title"
+                                                href="shop-details?id=<?php echo $item['product_id']; ?>"><?php echo htmlspecialchars($item['name']); ?></a>
+                                            <!--<p>$59.00 <del>$65.00</del></p>-->
+                                            <?php if ($item['color']): ?>
+                                            <span><b>Color:</b> <?php echo htmlspecialchars($item['color']); ?></span>
+                                            <?php endif; ?>
+                                            <?php if ($item['size']): ?>
+                                            <span><b>Size:</b> <?php echo htmlspecialchars($item['size']); ?></span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="cart_page_price">
+                                            <h3>₹<?php echo number_format($display_price, 2); ?></h3>
+                                        </td>
+                                        <td class="cart_page_quantity">
+                                            <div class="details_qty_input">
+                                                <button class="minus"
+                                                    onclick="updateCartQty(<?php echo $item['cart_id']; ?>, -1)"><i
+                                                        class="fas fa-minus" aria-hidden="true"></i></button>
+                                                <input type="text" value="<?php echo $item['quantity']; ?>" readonly>
+                                                <button class="plus"
+                                                    onclick="updateCartQty(<?php echo $item['cart_id']; ?>, 1)"><i
+                                                        class="fas fa-plus" aria-hidden="true"></i></button>
+                                            </div>
+                                        </td>
+                                        <td class="cart_page_total">
+                                            <h3>₹<?php echo number_format($subtotal, 2); ?></h3>
+                                        </td>
+                                        <td class="cart_page_action">
+                                            <a href="#"
+                                                onclick="removeFromCart(<?php echo $item['cart_id']; ?>, event)"> <i
+                                                    class="fas fa-times"></i> Remove</a>
+                                        </td>
+                                    </tr>
+                                    <?php
                                         }
                                     } else {
                                         echo '<tr><td colspan="7" class="text-center">Your cart is empty. <a href="shop">Start Shopping</a></td></tr>';
@@ -197,48 +197,52 @@ include 'admin/db.php';
                             </table>
 
                             <script>
-                                function updateCartQty(cartId, change) {
-                                    // Get current qty
-                                    // But simpler to just call backend 
-                                    // Need current qty... 
-                                    // Actually easier to just send update. Or fetch current from DOM.
-                                    const row = document.getElementById('cart_row_' + cartId);
-                                    const input = row.querySelector('input');
-                                    let newQty = parseInt(input.value) + change;
-                                    if (newQty < 1) return;
+                            function updateCartQty(cartId, change) {
+                                // Get current qty
+                                // But simpler to just call backend 
+                                // Need current qty... 
+                                // Actually easier to just send update. Or fetch current from DOM.
+                                const row = document.getElementById('cart_row_' + cartId);
+                                const input = row.querySelector('input');
+                                let newQty = parseInt(input.value) + change;
+                                if (newQty < 1) return;
 
-                                    fetch('includes/cart_actions.php', {
+                                fetch('includes/cart_actions.php', {
                                         method: 'POST',
-                                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                        headers: {
+                                            'Content-Type': 'application/x-www-form-urlencoded'
+                                        },
                                         body: `action=update&cart_id=${cartId}&quantity=${newQty}`
                                     })
-                                        .then(res => res.json())
-                                        .then(data => {
-                                            if (data.status === 'success') {
-                                                location.reload();
-                                            }
-                                        });
-                                }
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        if (data.status === 'success') {
+                                            location.reload();
+                                        }
+                                    });
+                            }
 
-                                function removeFromCart(cartId, event) {
-                                    event.preventDefault();
-                                    if (!confirm('Are you sure you want to remove this item?')) return;
+                            function removeFromCart(cartId, event) {
+                                event.preventDefault();
+                                if (!confirm('Are you sure you want to remove this item?')) return;
 
-                                    fetch('includes/cart_actions.php', {
+                                fetch('includes/cart_actions.php', {
                                         method: 'POST',
-                                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                        headers: {
+                                            'Content-Type': 'application/x-www-form-urlencoded'
+                                        },
                                         body: `action=remove&cart_id=${cartId}`
                                     })
-                                        .then(res => res.json())
-                                        .then(data => {
-                                            if (data.status === 'success') {
-                                                location.reload();
-                                            } else {
-                                                alert('Failed to remove item');
-                                            }
-                                        })
-                                        .catch(err => console.error(err));
-                                }
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        if (data.status === 'success') {
+                                            location.reload();
+                                        } else {
+                                            alert('Failed to remove item');
+                                        }
+                                    })
+                                    .catch(err => console.error(err));
+                            }
                             </script>
                         </div>
 
@@ -258,21 +262,21 @@ include 'admin/db.php';
                                         $display_price = calculate_price($price, $item['size']); // Recalculate
                                         $img = $item['image_path'] ? 'assets/uploads/products/' . $item['image_path'] : 'assets/images/no_image.png';
                                         ?>
-                                        <li>
-                                            <a class="img" href="#">
-                                                <img src="<?php echo htmlspecialchars($img); ?>" alt="Products"
-                                                    class="img-fluid w-100">
-                                            </a>
-                                            <div class="text">
-                                                <a class="title"
-                                                    href="shop-details?id=<?php echo $item['product_id']; ?>"><?php echo htmlspecialchars($item['name']); ?></a>
-                                                <p>₹<?php echo number_format($display_price, 2); ?> ×
-                                                    <?php echo $item['quantity']; ?>
-                                                </p>
-                                                <p>Color: <?php echo $item['color']; ?>, Size: <?php echo $item['size']; ?></p>
-                                            </div>
-                                        </li>
-                                    <?php endwhile; endif; ?>
+                                <li>
+                                    <a class="img" href="#">
+                                        <img src="<?php echo htmlspecialchars($img); ?>" alt="Products"
+                                            class="img-fluid w-100">
+                                    </a>
+                                    <div class="text">
+                                        <a class="title"
+                                            href="shop-details?id=<?php echo $item['product_id']; ?>"><?php echo htmlspecialchars($item['name']); ?></a>
+                                        <p>₹<?php echo number_format($display_price, 2); ?> ×
+                                            <?php echo $item['quantity']; ?>
+                                        </p>
+                                        <p>Color: <?php echo $item['color']; ?>, Size: <?php echo $item['size']; ?></p>
+                                    </div>
+                                </li>
+                                <?php endwhile; endif; ?>
                             </ul>
 
                             <h6>subtotal <span>₹<?php echo number_format($cart_total, 2); ?></span></h6>
@@ -284,8 +288,7 @@ include 'admin/db.php';
                         </div>
                         <div class="cart_summary_btn">
                             <a class="common_btn continue_shopping" href="shop">Continue shopping</a>
-                            <a class="common_btn" href="checkout">checkout <i
-                                    class="fas fa-long-arrow-right"></i></a>
+                            <a class="common_btn" href="checkout">checkout <i class="fas fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

@@ -7,19 +7,23 @@
  */
 
 // Set to 'test' for Sandbox mode, 'live' for Production mode
-define('PAYU_MODE', 'test'); 
+define('PAYU_MODE', 'live'); 
 
-// PayU Merchant Credentials (Use environment variables for security)
-define('PAYU_MERCHANT_KEY', getenv('PAYU_MERCHANT_KEY') ?: 'YOUR_MERCHANT_KEY');
-define('PAYU_MERCHANT_SALT', getenv('PAYU_MERCHANT_SALT') ?: 'YOUR_MERCHANT_SALT');
+// PayU Merchant Credentials
+// REPLACE these with your actual LIVE Merchant Key and Salt from the PayU Dashboard
+define('PAYU_MERCHANT_KEY', 'eS42z1');
+define('PAYU_MERCHANT_SALT', 'f81GbHHf12t0rhyf3nD80dMJsvQZJSUZ');
 
 // PayU Base URLs
 define('PAYU_TEST_URL', 'https://test.payu.in/_payment');
 define('PAYU_LIVE_URL', 'https://secure.payu.in/_payment');
 
 // Success and Failure URLs
-// Replace 'http://localhost/Vermicompost/' with your actual site URL
-$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/Vermicompost/";
+// IMPORTANT: For live site, ensure these match your actual domain structure
+$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/";
+// If your site is in a subdirectory like /vermicompost/, use this:
+// $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/vermicompost/";
+
 define('PAYU_SUCCESS_URL', $base_url . 'success.php');
 define('PAYU_FAILURE_URL', $base_url . 'failure.php');
 
@@ -28,7 +32,14 @@ define('PAYU_FAILURE_URL', $base_url . 'failure.php');
  * Format: sha512(key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5||||||SALT)
  */
 function generatePayUHash($params, $salt) {
-    $hash_string = $params['key'] . '|' . $params['txnid'] . '|' . $params['amount'] . '|' . $params['productinfo'] . '|' . $params['firstname'] . '|' . $params['email'] . '|||||||||||' . $salt;
+    $udf1 = $params['udf1'] ?? '';
+    $udf2 = $params['udf2'] ?? '';
+    $udf3 = $params['udf3'] ?? '';
+    $udf4 = $params['udf4'] ?? '';
+    $udf5 = $params['udf5'] ?? '';
+
+    $hash_string = $params['key'] . '|' . $params['txnid'] . '|' . $params['amount'] . '|' . $params['productinfo'] . '|' . $params['firstname'] . '|' . $params['email'] . '|' . $udf1 . '|' . $udf2 . '|' . $udf3 . '|' . $udf4 . '|' . $udf5 . '||||||' . $salt;
+    
     return strtolower(hash('sha512', $hash_string));
 }
 

@@ -133,7 +133,7 @@
         <div class="row align-items-center">
             <div class="col-lg-2">
                 <div class="header_logo_area">
-                    <a href="<?php echo $header_path_prefix; ?>index" class="header_logo">
+                    <a href="<?php echo $header_path_prefix; ?>/" class="header_logo">
                         <img src="<?php echo $header_path_prefix; ?>assets/images/logo/logo.png" alt="Vermi Compost"
                             class="img-fluid w-100">
                     </a>
@@ -193,7 +193,7 @@
                 <div class="main_menu_area">
 
                     <ul class="menu_item">
-                        <li><a class="active" href="<?php echo $header_path_prefix; ?>index">Home</a></li>
+                        <li><a class="active" href="<?php echo $header_path_prefix; ?>/">Home</a></li>
                         <li><a href="<?php echo $header_path_prefix; ?>shop">Shop</a></li>
                         <li><a href="<?php echo $header_path_prefix; ?>about_us">About Us</a></li>
                         <li><a href="<?php echo $header_path_prefix; ?>track-order">Track Order</a></li>

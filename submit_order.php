@@ -240,6 +240,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'sys_order_id' => $order_id,
             'order_number' => $order_number
         ]);
+    } elseif ($payment_method === 'PayU') {
+        // PayU Initialization
+        // We will redirect to pay.php which handles hash and redirection
+        echo json_encode([
+            'status' => 'payu_init',
+            'redirect_url' => 'pay.php?order_id=' . $order_id
+        ]);
     }
 
 } else {
